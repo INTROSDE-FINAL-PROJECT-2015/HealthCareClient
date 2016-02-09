@@ -5,7 +5,7 @@
   <img src="https://avatars2.githubusercontent.com/u/16534367?v=3&s=300" width="200">
 </p>
 
-## Datastore Service (1/5)
+## Health Care System
 
 **Student:** Andrea Galloni ([Twitter](https://twitter.com/andreagalloni92))
 
@@ -34,9 +34,9 @@ The project is composed by seven different services, those entities interact all
 
 + **Adapter Service:** it is based on [SOAP](https://en.wikipedia.org/wiki/SOAP) protocol. The service exposes some data methods that serves data. The data, in this case, as opposed to the Database Service, comes from external [APIs](https://en.wikipedia.org/wiki/Web_API), the adapter service **acts as mediator getting data from external services** reshaping and cleaning the content from useless attributes and it serves the final product in known and minimal format. In particular, in this specific case, it gets quotes from [QuotesOnDesign.com](http://quotesondesign.com/) and songs [soundcloud.com](https://soundcloud.com/).  
 
-+ **Storage Service**: it implements the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) architectural style. The service developed in this module filters and integrates data from the two services described above. It **acts as mediator wrapper** connecting data sources to the System Logic in a **completely transparent** way, in fact thanks to the Storage Service higher level services (System Logic Services) ignore the nature of underlying services.
++ **Storage Service:**: it implements the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) architectural style. The service developed in this module filters and integrates data from the two services described above. It **acts as mediator wrapper** connecting data sources to the System Logic in a **completely transparent** way, in fact thanks to the Storage Service higher level services (System Logic Services) ignore the nature of underlying services.
 
-+ **Business Logic Service:** it implements the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) architectural style. This service is designed as **decision maker and calculator** it processes data coming from both Process Centric Service (and more deeply from the user) and Storage Service. The Business Logic service is the entity that **implements (thus knows) the final purpose of the application**. This service can be seen as the "CPU" of the entire project. In this specific case it decides if a user Long term Goal is archived moreover it computes the daily user score, it decides if contact the doctor about a patient progress or not.
++ **Business Logic Service:** it implements the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) architectural style. This service is designed as **decision maker and calculator** it processes data coming from both Process Centric Service (and more deeply from the user) and Storage Service. The Business Logic service is the entity that **implements (thus knows) the final purpose of the application**. This service can be seen as the "CPU" of the entire project. In this specific case it decides if a user Long-Term Goal is archived moreover it computes the daily user score, it decides if contact the doctor about a patient progress or not.
 
 + **Process Centric Service:** it implements the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) architectural style. This service is receiving all users requests. It is the **entry point** of the Health Care Application. This service acts as a router **dispatching requests** to the right service reshaping the data if needed, it acts as **mediator between the user client and all others services** within the application contest. This layer is doing nothing more than redirecting a request to a proper underlying service or a set of services. This service clearly implements the concept of **Service Orchestration**.
 
