@@ -23,20 +23,22 @@
 
 ### INTRODUCTION:
 
-This client is a console application that allows the user to keep track of daily tasks assigned by a medic and store health measurements (e.g.: weight, blood pressure) keeping track of progresses. Is also implemented a score-motivational system, in fact, the application  assigns some goals ( DailyGoals and LongTermGoals ) to the user. At the and of the day the user will insert his/her measurements and if a Long Term Goal is archived the System will provide a Song as prize to the efforts made to archive it and the doctor will be notified with an e-mail, otherwise, if the Goal is not met the system will provide a motivational quotation. 
+This client is a console application that allows the user to keep track of daily tasks assigned by a medic and store health measurements (e.g.: weight, blood pressure) keeping track of progresses. A score-motivational system is also implemented, in fact, the application  assigns some goals ( DailyGoals and LongTermGoals ) to the user.
+The use case is that the user at the and of the day should insert his/her measurements and if a Long Term Goal is archived the System will provide a Song as prize to the efforts made to archive it and the doctor will be notified with an e-mail, otherwise, if the Goal is not met the system will provide a motivational quotation. Is also possible to insert edit and delete Daily Goals.  
 
 ### PROJECT ARCHITECTURE:
 
+The project is composed by seven different services, those entities interact all together thanks to **the process centric service**. Follows a short description of those services:
 
++ **DataBase Service:** it is based on SOAP web service technology. It manages the data and acts as data source, it performs reads and writes on the database. The SOAP protocol exposes only methods to serve and store data, it does not provide any other functionality.
+
++ **Adapter Service:**
 
 <p align="center">
   <br/><b><a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">
   Project Architecture:</a></b><br/>
   <img src="imgs/HealthCareSystem.png">
 </p>
-
-
-The developed console application allows the final user to take care of its own life status. It permits to set some goals and track his/her improvements to hit them. Specifically, the goals which are possibile to set, in this application, are: sleeping hours per day and the person’s weight.
 
 
 <p align="center">
