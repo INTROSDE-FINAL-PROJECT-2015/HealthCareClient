@@ -49,17 +49,42 @@ The project is composed by seven different services, those entities interact all
 </p>
 
 
+
+### TOOLS & TECHNOLOGIES:
+
 <p align="center">
-  <br/><b><a href="https://maven.apache.org/">Build Tool:</a></b><br/>
-  <a href="https://ant.apache.org/">
-  <img src="http://jansensan.net/images/blog/post0016_001.jpg">
+  <br/><b><a href="https://www.heroku.com/">Deployed On:</a></b><br/>
+  <a href="https://www.heroku.com/">
+  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png" width="200">
   </a>
 </p>
 
 <p align="center">
+  <br/><b><a href="https://www.sqlite.org/">Data Base:</a></b><br/>
+  <a href="https://www.sqlite.org/">
+  <img src="http://vignette1.wikia.nocookie.net/databasemanagement/images/c/c2/SQLite_Logo-3e5453f0a4c3e6f5.gif/revision/latest?cb=20111014145321" width="150">
+  </a>
+</p>
+
+<p align="center">
+  <br/><b><a href="https://ant.apache.org/">Build Tool:</a></b><br/>
+  <a href="https://ant.apache.org/">
+  <img src="http://jansensan.net/images/blog/post0016_001.jpg" height="90">
+  </a>
+</p>
+
+<p align="center">
+  <br/><b><a href="https://git-scm.com/">Versioning Tool:</a></b><br/>
+  <a href="https://git-scm.com/">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/2000px-Git-logo.svg.png" width="200">
+  </a>
+</p>
+
+
+<p align="center">
   <br/><b><a href="https://www.jetbrains.com/idea/">Editor Used:</a></b><br/>
   <a href="https://www.jetbrains.com/idea/">
-  <img src="https://pbs.twimg.com/profile_images/674914166239571968/0R_pWWlt.png" width="200">
+  <img src="https://pbs.twimg.com/profile_images/674914166239571968/0R_pWWlt.png"  height="90">
   </a>
 </p>
 
