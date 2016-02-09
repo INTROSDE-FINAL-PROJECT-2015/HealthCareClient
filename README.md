@@ -2,7 +2,7 @@
 
 <p align="center">
   <br/><b><a href="https://en.wikipedia.org/wiki/Distributed_computing">Distribuited Systems (SOA)</a></b><br/>
-  <img src="https://avatars2.githubusercontent.com/u/16534367?v=3&s=300" width="200">
+  <img src="https://avatars2.githubusercontent.com/u/16534367?v=3&s=300" width="100">
 </p>
 
 ## Health Care System
