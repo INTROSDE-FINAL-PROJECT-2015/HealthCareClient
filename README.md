@@ -48,23 +48,42 @@ The project is composed by seven different services, those entities interact all
   <img src="imgs/HealthCareSystem.png">
 </p>
 
+The data format used by [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) Services to exchange data is [JSON](https://en.wikipedia.org/wiki/JSON). This choice is due to the fact that [JSON](https://en.wikipedia.org/wiki/JSON) compared to [XML](https://en.wikipedia.org/wiki/XML) is lighter (thus faster to transfer) less verbose and better readable by humans ( [reference link](https://www.quora.com/Markup-Languages/What-are-the-advantages-of-JSON-over-XML) ). Moreover nowadays [JSON](https://en.wikipedia.org/wiki/JSON) seems to be much common to expose [Web APIs](https://en.wikipedia.org/wiki/Web_API).
+
+While [SOAP](https://en.wikipedia.org/wiki/SOAP) services are using [XML](https://en.wikipedia.org/wiki/XML) by definition of the protocol ([SOAP W3C specs](https://www.w3.org/TR/soap/)).
+
+<br/>
+
+### FUTURE WORK AND IMPROVEMENTS:
+
++ Integration of more services (e.g.: Runtastic)
++ Prettier user interface (Web, Mobile)
++ Notification System to remember to do Daily Exercises
++ User Statistics
++ Food programme
++ Chat service with the doctor
++ More and more and more...
 
 
 ### TOOLS & TECHNOLOGIES:
 
 <p align="center">
-  <br/><b><a href="https://www.heroku.com/">Deployed On:</a></b><br/>
-  <a href="https://www.heroku.com/">
-  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png" width="200">
-  </a>
-</p>
 
-<p align="center">
-  <br/><b><a href="https://www.sqlite.org/">Data Base:</a></b><br/>
   <a href="https://www.sqlite.org/">
   <img src="http://vignette1.wikia.nocookie.net/databasemanagement/images/c/c2/SQLite_Logo-3e5453f0a4c3e6f5.gif/revision/latest?cb=20111014145321" width="150">
   </a>
+  <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">
+  <img src="http://blog.newrelic.com/wp-content/uploads/javalogo.png" width="150">
+  </a>
+  <a href="https://git-scm.com/">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/2000px-Git-logo.svg.png" width="200">
+  </a>
+  <a href="https://www.jetbrains.com/idea/">
+  <img src="https://pbs.twimg.com/profile_images/674914166239571968/0R_pWWlt.png"  height="90">
+  </a>
 </p>
+
+
 
 <p align="center">
   <br/><b><a href="https://ant.apache.org/">Build Tool:</a></b><br/>
@@ -73,20 +92,14 @@ The project is composed by seven different services, those entities interact all
   </a>
 </p>
 
+
 <p align="center">
-  <br/><b><a href="https://git-scm.com/">Versioning Tool:</a></b><br/>
-  <a href="https://git-scm.com/">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/2000px-Git-logo.svg.png" width="200">
+  <br/><b><a href="https://www.heroku.com/">Deployed On:</a></b><br/>
+  <a href="https://www.heroku.com/">
+  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Heroku_logo.png" width="200">
   </a>
 </p>
 
-
-<p align="center">
-  <br/><b><a href="https://www.jetbrains.com/idea/">Editor Used:</a></b><br/>
-  <a href="https://www.jetbrains.com/idea/">
-  <img src="https://pbs.twimg.com/profile_images/674914166239571968/0R_pWWlt.png"  height="90">
-  </a>
-</p>
 
 ## .
 
