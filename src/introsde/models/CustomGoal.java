@@ -10,7 +10,6 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.*;
 import javax.xml.bind.annotation.XmlTransient;
 
-import static java.lang.Math.toIntExact;
 
 
 public class CustomGoal implements Serializable {
