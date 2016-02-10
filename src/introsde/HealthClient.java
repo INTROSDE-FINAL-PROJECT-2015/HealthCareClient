@@ -275,10 +275,10 @@ public class HealthClient{
           asd("\n\n TITLE : " + gres.getAuthor());
           asd(" URI : " + gres.getContent());
         }else{
-        asd("\n\n You still have not reached the goal....");
-        asd(" I hope this quote will encourage you:");
-        asd("\n\n QUOTE : " + gres.getContent());
-        asd(" AUTHOR : " + gres.getAuthor());
+          asd("\n\n You still have not reached the goal....");
+          asd(" I hope this quote will encourage you:");
+          asd("\n\n QUOTE : " + gres.getContent());
+          asd(" AUTHOR : " + gres.getAuthor());
         }
       }
     }
