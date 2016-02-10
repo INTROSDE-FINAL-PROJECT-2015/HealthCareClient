@@ -53,6 +53,8 @@ The data format used by [REST](https://en.wikipedia.org/wiki/Representational_st
 While [SOAP](https://en.wikipedia.org/wiki/SOAP) services are using [XML](https://en.wikipedia.org/wiki/XML) by definition of the protocol ([SOAP W3C specs](https://www.w3.org/TR/soap/)).
 
 <br/>
+##### The specific documentation can be found on the specific wikipage of every service.
+<br/>
 
 ### FUTURE WORK AND IMPROVEMENTS:
 
