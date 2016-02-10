@@ -50,21 +50,26 @@ import java.util.Scanner;
 
 public class HealthClient{
   static String UERRELLE = UriHelper.getProcessCentricServiceURL();
-  static Scanner scanner = new Scanner(System.in);
+  //static Scanner scanner = new Scanner(System.in);
   static Console console = System.console();
 
 
 
   public static void main(String[] args) throws IOException {
-    asd("Hi! How are you?");
+
+    asd("\n\nHi! Welcome to the Health Care System Client! \n\nHow are you?");
     pressAnyKeyToContinue();
+
     getPeopleList();
     String userID = userinput("Please enter your ID:");
     Person p = getPerson(userID);
+
     checkDailyGoals(p);
     createNewDailyGoal(p.getIdPerson());
     List<CustomGoal> customGoals = theGoals(p.getIdPerson());
     theMeasures(customGoals);
+
+    pressAnyKeyToExit();
   }
 
   public static void asd(String s){
@@ -76,15 +81,22 @@ public class HealthClient{
     System.in.read();
   }
 
+  private static void pressAnyKeyToExit() throws IOException {
+    System.out.println("\n\n Thank You for today that's all..\n \n  Press any key to exit... \n \n");
+    System.in.read();
+  }
+
   private static String userinput(String s){
     asd(s);
-    return scanner.next();
+    Scanner scanner = new Scanner(System.in);
+    return scanner.nextLine();
   }
 
   private static String userinput1(String s){
     asd(s);
+    Scanner scanner = new Scanner(System.in);
     return scanner.nextLine();
-    }
+  }
 
 
   private static Response doGet(String address){
@@ -146,13 +158,13 @@ public class HealthClient{
 
   private static void checkDailyGoals(Person p){
     asd("\n\n.. getting your daily goals ..\n\n");
-    asd(UERRELLE+"get/person/"+p.getIdPerson()+"/dailygoals");
+    //asd(UERRELLE+"get/person/"+p.getIdPerson()+"/dailygoals");
     Response res = doGet("get/person/"+p.getIdPerson()+"/dailygoals");
     List<DailyGoal> dgl = res.readEntity(new GenericType<List<DailyGoal>>(){});
     if(dgl==null)
       asd("Nullo");
 
-    asd("What about your daily goals? :) ");
+    asd("\n\n What about your daily goals? :) \n");
     for (DailyGoal dg : dgl){
       String ans = userinput(dg.getQuestion());
       if(ans.equals("YES") || ans.equals("yes") || ans.equals("Yes")){
@@ -166,8 +178,8 @@ public class HealthClient{
       asd("Very Good! You reached a VERY GOOD score!!!");
       asd(gr.getReached()+"/"+gr.getTotal());
     } else {
-      asd("Your score should be higer.. You got:");
-      asd(gr.getReached()+"/"+gr.getTotal()+"\n\n");
+      asd("\n\nYour score should be higer.. You got:");
+      asd("\t\t" + gr.getReached()+"/"+gr.getTotal()+"\n\n");
       asd("Are your DailyGoals too many or too difficult?");
       deleteDailyGoals(dgl,p.getIdPerson());
     }
@@ -204,9 +216,12 @@ public class HealthClient{
           // http://127.0.1.1:5800/sdelab/get/person/1/dailygoals/saveorupdate
           // TODO doDelete("get/person/" + pid + "/dailygoals/" + dg.getIdGoal());
           newQuestion = userinput("please provide the new question");
+          System.out.println("You entered: " + newQuestion);
           dg.setQuestion(newQuestion);
-          doPost1("get/person/" + pid + "/dailygoals/saveorupdate",dg);
+          Response res3 = doPost1("get/person/" + pid + "/dailygoals/saveorupdate",dg);
+          DailyGoal edited = res3.readEntity(DailyGoal.class);
           asd("...DailyGoal edited...");
+          asd(dg.getQuestion());
           }
         }
       }
@@ -243,7 +258,7 @@ public class HealthClient{
   }
 
   private static List<CustomGoal> theGoals(int pid){
-    String ans = userinput("\n Would you like to have a look at your goals? \n");
+    String ans = userinput("\n Would you like to have a look at your long-term Goals? \n");
     Response res = doGet("get/person/" + pid + "/goals");
     List<CustomGoal> goals = res.readEntity(new GenericType<List<CustomGoal>>(){});
     if(ans.equals("YES") || ans.equals("yes") || ans.equals("Yes")){
@@ -260,6 +275,7 @@ public class HealthClient{
     Response res = null;
     if(ans.equals("YES") || ans.equals("yes") || ans.equals("Yes")){
       for (CustomGoal g : goals){
+        try{
         String measureType = String.valueOf(g.getMeasureDefinition().getMeasureType());
         String pid = String.valueOf(g.getIdPerson());
         ans = userinput("\n What about your " + measureType + "?");
@@ -279,6 +295,9 @@ public class HealthClient{
           asd(" I hope this quote will encourage you:");
           asd("\n\n QUOTE : " + gres.getContent());
           asd(" AUTHOR : " + gres.getAuthor());
+        }
+      } catch (Exception e){
+          asd("\n\n External API Error..\n\n");
         }
       }
     }
